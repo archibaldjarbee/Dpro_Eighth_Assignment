@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h2 style="margin-bottom: 1rem;">Recent Tweets</h2>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div style="border: 1px solid #ddd; border-radius: 6px; padding: 1rem; margin-bottom: 1rem;">
+      <p><%= post.content %></p>
+      <p style="font-size: 0.9rem; color: #888;">Posted at: <%= post.created_at.strftime("%b %d, %Y %H:%M") %></p>
+      <div style="margin-top: 0.5rem;">
+        <%= link_to "Show", post, style: "margin-right: 10px;" %>
+        <%= link_to "Edit", edit_post_path(post), style: "margin-right: 10px;" %>
+        <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" }, style: "color: red;" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div style="margin-top: 1rem;">
+  <%= link_to "New Tweet", new_post_path, style: "background-color: #1da1f2; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none;" %>
+</div>

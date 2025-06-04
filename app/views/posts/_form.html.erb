@@ -1,0 +1,21 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div class="error" style="margin-bottom: 1rem; border: 1px solid red; padding: 1rem; border-radius: 6px;">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="margin-bottom: 1rem;">
+    <%= form.label :content, "Your Tweet", style: "display: block; font-weight: bold;" %>
+    <%= form.text_area :content, rows: 3, style: "width: 100%; padding: 0.5rem; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc;" %>
+  </div>
+
+  <div>
+    <%= form.submit "Post", style: "background-color: #1da1f2; color: white; padding: 0.5rem 1rem; border: none; border-radius: 6px; cursor: pointer;" %>
+  </div>
+<% end %>

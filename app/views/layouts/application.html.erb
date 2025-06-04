@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweet Clone</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f0f2f5;
+      }
+
+      header {
+        background-color: #1da1f2;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #eee;
+        color: #333;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      }
+
+      a {
+        color: #1da1f2;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>TwitterClone</h1>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <footer>
+      &copy; <%= Time.now.year %> TwitterClone App
+    </footer>
+  </body>
+</html>
